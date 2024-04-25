@@ -30,8 +30,6 @@ class App extends Component {
     this.setState({ contacts: tempArray });
   }
 
-  componentDidCatch;
-
   componentDidUpdate() {
     const { contacts } = this.state;
     localStorage.setItem('contacts', JSON.stringify(contacts));
