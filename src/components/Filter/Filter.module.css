@@ -1,0 +1,9 @@
+.filter {
+  width: 100%;
+}
+
+.filter::placeholder {
+  text-align: center;
+  color: rgb(208, 208, 208);
+  font-weight: 500;
+}

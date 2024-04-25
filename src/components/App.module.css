@@ -1,0 +1,73 @@
+.App {
+  height: calc(100vh - 40px);
+  margin: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(
+    -165deg,
+    rgba(255, 255, 255, 0.1),
+    rgb(128, 128, 128, 0.5),
+    rgb(0, 0, 0, 0.5)
+  );
+  backdrop-filter: sepia(50%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.title {
+  color: white;
+  text-decoration: underline goldenrod;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.content {
+  display: flex;
+  height: calc(100% - 40px);
+  gap: 10px;
+  padding: 20px;
+}
+
+.content > section:first-child {
+  flex: 1;
+}
+
+.controls {
+  padding: 20px;
+}
+
+input {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgb(208, 208, 208);
+}
+
+input::placeholder {
+  text-align: center;
+  color: rgb(208, 208, 208);
+  font-weight: 500;
+}
+
+button {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(208, 208, 208);
+  padding: 5px 10px;
+}
+
+label {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-weight: 100;
+  justify-content: space-between;
+}
+
+button:hover {
+  border: 2px solid rgba(73, 255, 70, 0.5);
+}
