@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 export default function useContacts(filter) {
   const [contacts, setContacts] = useState([]);
-
+  //removed unused variable 'contact'
   const [setContact] = useState({});
 
   useEffect(() => {
