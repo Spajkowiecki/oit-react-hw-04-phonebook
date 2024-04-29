@@ -1,9 +1,9 @@
 {
-  "name": "goit-react-hw-04-phonebook",
+  "name": "oit-react-hw-04-phonebook",
   "author": "Patryk Karolczak",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://spajkowiecki.github.io/goit-react-hw-04-phonebook/",
+  "homepage": "https://spajkowiecki.github.io/oit-react-hw-04-phonebook/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
