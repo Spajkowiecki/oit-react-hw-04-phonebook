@@ -13,6 +13,7 @@ export default function App() {
   //? HOOKS
   const { removeContact, addContact, contacts } = useContacts();
   //? STATES
+  //filter for searching contacts in array
   const [filter, setFilter] = useState('');
 
   return (
