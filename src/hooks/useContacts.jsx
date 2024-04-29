@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 
 export default function useContacts(filter) {
   const [contacts, setContacts] = useState([]);
-  /* eslint-disable no-unused-vars */
-  const [contact, setContact] = useState({});
-  /* eslint-enable no-unused-vars */
+
+  const [setContact] = useState({});
+
   useEffect(() => {
     //check if there is something in localStorage
     const checkLocalStorage = () => {
