@@ -1,32 +1,42 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
-import style from './ContactList.module.css';
+import { nanoid } from 'nanoid';
 
+import style from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 
-class ContactList extends Component {
-  handleRemove = element => {
-    this.props.remove(element);
-  };
-  render() {
-    const { contacts } = this.props;
-    return (
-      <ul className={style.list}>
-        {contacts.map(element => {
-          return (
-            <li key={element.id}>
-              <Contact contact={element} />
-              <button onClick={() => this.handleRemove(element)}>remove</button>
-            </li>
-          );
-        })}
-      </ul>
-    );
-  }
+export default function ContactList({ contacts, remove }) {
+  /*
+  ! when adding contact i need to somehow create unique id
+  ? the easiest way was to use nanoid()
+  */
+
+  return (
+    <ul className={style.list}>
+      {contacts.map(element => {
+        return (
+          //! each child will have unique key from:
+          <li id={element.id} key={element.id}>
+            <Contact contact={element} />
+            <button onClick={remove}>remove</button>
+          </li>
+        );
+      })}
+    </ul>
+  );
 }
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default ContactList;
+// return element.id === undefined ? (
+//   <li key={contacts.length + 1}>
+//     <Contact contact={element} />
+//     <button onClick={remove}>remove</button>
+//   </li>
+// ) : (
+//   <li key={element.id}>
+//     <Contact contact={element} />
+//     <button onClick={remove}>remove</button>
+//   </li>
+// );

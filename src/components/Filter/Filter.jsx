@@ -1,28 +1,21 @@
-import { Component } from 'react';
 import style from './Filter.module.css';
 import PropTypes from 'prop-types';
 
-class Filter extends Component {
-  handleChange = event => {
-    this.props.filter(event.target.value);
+export default function Filter({ value }) {
+  const filterValue = event => {
+    value(event.target.value);
   };
 
-  render() {
-    const { value } = this.props;
-    return (
-      <input
-        className={style.filter}
-        type="text"
-        placeholder="search for contact"
-        value={value}
-        onChange={this.handleChange}
-      ></input>
-    );
-  }
+  return (
+    <input
+      className={style.filter}
+      type="text"
+      placeholder="search for contact"
+      onChange={filterValue}
+    ></input>
+  );
 }
 
 Filter.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.func,
 };
-
-export default Filter;
