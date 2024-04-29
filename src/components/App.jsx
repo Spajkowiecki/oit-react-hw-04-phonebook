@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Section from './Section/Section';
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
-// //styles
+
 import style from './App.module.css';
 import ContactForm from './ContactForm/ContactForm';
 

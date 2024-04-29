@@ -1,15 +1,9 @@
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 
 import style from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 
 export default function ContactList({ contacts, remove }) {
-  /*
-  ! when adding contact i need to somehow create unique id
-  ? the easiest way was to use nanoid()
-  */
-
   return (
     <ul className={style.list}>
       {contacts.map(element => {
@@ -28,15 +22,3 @@ export default function ContactList({ contacts, remove }) {
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.object),
 };
-
-// return element.id === undefined ? (
-//   <li key={contacts.length + 1}>
-//     <Contact contact={element} />
-//     <button onClick={remove}>remove</button>
-//   </li>
-// ) : (
-//   <li key={element.id}>
-//     <Contact contact={element} />
-//     <button onClick={remove}>remove</button>
-//   </li>
-// );

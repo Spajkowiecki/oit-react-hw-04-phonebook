@@ -32,14 +32,12 @@ export default function useContacts(filter) {
   const removeContact = contact => {
     //console.log(contact.target);
     const contactObject = parseInt(contact.target.parentNode.id);
-    console.log('contactObject: ', contactObject);
+    //console.log('contactObject: ', contactObject);
     //console.log(contacts[contactObject]);
     const remContact = contacts.filter(c => {
       return c.id !== contactObject;
     });
 
-    //debug
-    console.log('removing contact!');
     setContacts(remContact);
   };
 
@@ -54,7 +52,6 @@ export default function useContacts(filter) {
       return alert('This contact already exists, change number or email');
     }
     setContacts(prev => [...prev, newContact]);
-    // setContact({});
   };
 
   const findContact = () => {
