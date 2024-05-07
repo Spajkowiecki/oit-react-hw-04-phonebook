@@ -9,12 +9,24 @@ import ContactForm from './ContactForm/ContactForm';
 import { useState } from 'react';
 import useContacts from 'hooks/useContacts';
 
+function useFilter() {}
+
 export default function App() {
   //? HOOKS
-  const { removeContact, addContact, contacts } = useContacts();
+  const [filter, setFilter] = useState('');
+  const { removeContact, addContact, contacts } = useContacts(filter);
   //? STATES
   //filter for searching contacts in array
-  const [filter, setFilter] = useState('');
+
+  const FilterContacts = contacts => {
+    return contacts.filter(filteredContacts => {
+      return (
+        filteredContacts.name.toLowerCase().includes(filter.toLowerCase()) ||
+        filteredContacts.phone.toLowerCase().includes(filter.toLowerCase()) ||
+        filteredContacts.email.toLowerCase().includes(filter.toLowerCase())
+      );
+    });
+  };
 
   return (
     <div className={style.App}>
@@ -26,13 +38,7 @@ export default function App() {
         <Section name="Contacts">
           <Filter value={setFilter} />
           <ContactList
-            contacts={contacts.filter(myContact => {
-              return (
-                myContact.name.toLowerCase().includes(filter.toLowerCase()) ||
-                myContact.phone.toLowerCase().includes(filter.toLowerCase()) ||
-                myContact.email.toLowerCase().includes(filter.toLowerCase())
-              );
-            })}
+            contacts={FilterContacts(contacts)}
             remove={removeContact}
           />
         </Section>

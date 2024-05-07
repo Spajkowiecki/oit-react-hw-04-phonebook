@@ -4,20 +4,14 @@ import { useEffect, useState } from 'react';
 export default function useContacts(filter) {
   const [contacts, setContacts] = useState([]);
   //removed unused variable 'contact'
-  const [setContact] = useState({});
+  const [contact, setContact] = useState({});
 
   useEffect(() => {
     //check if there is something in localStorage
     const checkLocalStorage = () => {
       const storage = JSON.parse(localStorage.getItem('contacts'));
-      //! if - for checking if storage is null
-      if (storage === null) {
-        console.log('There are no contacts in localStorage');
-        // exit
-        return;
-      }
-      //console.log('Something is in localStorage, loading data...');
-      console.log('found something inside!');
+
+      console.log('found something inside!:\n', storage);
       setContacts(storage);
     };
     console.log('useEffect: before checkLocalStorage');
@@ -27,7 +21,7 @@ export default function useContacts(filter) {
   }, []);
 
   useEffect(() => {
-    //localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   const removeContact = contact => {
