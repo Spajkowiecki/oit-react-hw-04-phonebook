@@ -42,6 +42,4 @@
 
 //! each child will have unique key from:
 
-//! if - for checking if storage is null
-
 //! refactored Contact class to function
