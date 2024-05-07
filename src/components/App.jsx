@@ -8,25 +8,14 @@ import ContactForm from './ContactForm/ContactForm';
 
 import { useState } from 'react';
 import useContacts from 'hooks/useContacts';
-
-function useFilter() {}
+import useFilter from 'hooks/useFilter';
 
 export default function App() {
   //? HOOKS
-  const [filter, setFilter] = useState('');
+  const { filter, setFilter, FilterContacts } = useFilter();
   const { removeContact, addContact, contacts } = useContacts(filter);
   //? STATES
   //filter for searching contacts in array
-
-  const FilterContacts = contacts => {
-    return contacts.filter(filteredContacts => {
-      return (
-        filteredContacts.name.toLowerCase().includes(filter.toLowerCase()) ||
-        filteredContacts.phone.toLowerCase().includes(filter.toLowerCase()) ||
-        filteredContacts.email.toLowerCase().includes(filter.toLowerCase())
-      );
-    });
-  };
 
   return (
     <div className={style.App}>
