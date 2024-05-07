@@ -10,6 +10,11 @@ export default function useContacts(filter) {
     //check if there is something in localStorage
     const checkLocalStorage = () => {
       const storage = JSON.parse(localStorage.getItem('contacts'));
+      if (storage === null) {
+        console.log('Nothing found inside!');
+
+        return;
+      }
 
       console.log('found something inside!:\n', storage);
       setContacts(storage);
@@ -38,7 +43,7 @@ export default function useContacts(filter) {
 
   const addContact = newContact => {
     //! adding ID to make contact better to identify:
-    const contactWithID = { id: contacts.length, ...contact };
+    const contactWithID = { id: contacts.length, ...newContact };
     setContact(contactWithID);
     const tempArray = contacts.filter(e => {
       return contact.phone === e.phone || contact.email === e.email;
@@ -46,20 +51,11 @@ export default function useContacts(filter) {
     if (tempArray.length > 0) {
       return alert('This contact already exists, change number or email');
     }
-    setContacts(prev => [...prev, contact]);
+    console.log(contact);
+    setContacts(prev => [...prev, contactWithID]);
   };
 
-  const findContact = () => {
-    contacts.filter(myContact => {
-      return (
-        myContact.name.toLowerCase().includes(filter.toLowerCase()) ||
-        myContact.phone.toLowerCase().includes(filter.toLowerCase()) ||
-        myContact.email.toLowerCase().includes(filter.toLowerCase())
-      );
-    });
-  };
-
-  return { removeContact, setContacts, addContact, findContact, contacts };
+  return { removeContact, setContacts, addContact, contacts };
 }
 
 useContacts.propTypes = {
