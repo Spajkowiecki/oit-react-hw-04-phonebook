@@ -6,7 +6,6 @@ import ContactList from './ContactList/ContactList';
 import style from './App.module.css';
 import ContactForm from './ContactForm/ContactForm';
 
-import { useState } from 'react';
 import useContacts from 'hooks/useContacts';
 import useFilter from 'hooks/useFilter';
 

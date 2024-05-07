@@ -36,17 +36,17 @@ export default function useContacts(filter) {
     setContacts(remContact);
   };
 
-  const addContact = contact => {
+  const addContact = newContact => {
     //! adding ID to make contact better to identify:
-    const newContact = { id: contacts.length, ...contact };
-    setContact(newContact);
+    const contactWithID = { id: contacts.length, ...contact };
+    setContact(contactWithID);
     const tempArray = contacts.filter(e => {
       return contact.phone === e.phone || contact.email === e.email;
     });
     if (tempArray.length > 0) {
       return alert('This contact already exists, change number or email');
     }
-    setContacts(prev => [...prev, newContact]);
+    setContacts(prev => [...prev, contact]);
   };
 
   const findContact = () => {
