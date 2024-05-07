@@ -25,7 +25,10 @@ export default function App() {
         </Section>
         <Section name="Contacts">
           <Filter value={setFilter} />
-          <ContactList contacts={contacts} remove={removeContact} />
+          <ContactList
+            contacts={filter ? FilterContacts(contacts) : contacts}
+            remove={removeContact}
+          />
         </Section>
       </div>
     </div>
