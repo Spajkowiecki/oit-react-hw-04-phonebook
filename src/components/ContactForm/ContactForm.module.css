@@ -1,25 +1,40 @@
-.formContainer {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 10px;
+.container {
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   width: fit-content;
-  margin: 20px;
+  padding: 10px;
 }
 
-.form {
+.formContainer {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 
-.formContainer p {
-  text-align: center;
-  font-weight: 900;
-  font-size: 20px;
-  color: white;
-  text-decoration: underline 2px goldenrod;
-  margin-bottom: 10px;
+.formContainer label p {
+  margin-bottom: 5px;
 }
 
 .formContainer button {
-  width: 100%;
+  margin-top: 10px;
+}
+
+.formContainer input {
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+
+  outline: none;
+}
+
+.formContainer input::placeholder {
+  color: white;
+  font-weight: 700;
+}
+
+.container h3 {
+  margin-bottom: 10px;
+  text-align: center;
 }

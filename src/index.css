@@ -13,5 +13,6 @@
 }
 
 body {
-  background: linear-gradient(165deg, black, gray, white);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(165deg, black, rgb(62, 62, 62), rgb(44, 44, 44));
 }

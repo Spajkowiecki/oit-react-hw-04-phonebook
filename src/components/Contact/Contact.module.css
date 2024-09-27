@@ -1,32 +1,48 @@
-.contact {
-  padding: 5px;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+.container {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 10px;
+  padding: 10px;
 }
 
-.upper {
-  text-align: center;
-  color: rgb(255, 225, 147);
-  font-weight: 700;
-  padding-bottom: 5px;
-  border-bottom: 1px solid white;
-}
-
-.bottom {
+.contactInfo {
   display: flex;
-  flex-direction: column;
-  padding: 5px;
-  justify-content: space-around;
-  color: white;
+  align-items: center;
+  gap: 10px;
 }
 
-.contact:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+.contactLeft img {
+  border-radius: 50%;
 }
 
-.data {
+.contactRight {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding-left: 10px;
+}
+
+.container:hover {
+  animation: blink 1s ease-in-out infinite;
+}
+
+.controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   display: flex;
-  justify-content: space-between;
+  gap: 5px;
+  justify-content: right;
+
+  z-index: 10;
+}
+
+@keyframes blink {
+  0% {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
 }

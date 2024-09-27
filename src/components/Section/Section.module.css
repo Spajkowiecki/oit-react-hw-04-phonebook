@@ -1,14 +1,14 @@
-.section h2 {
-  color: white;
-  text-decoration: underline goldenrod;
-  text-align: center;
-  padding: 10px;
-  border-bottom: 1px solid goldenrod;
+section {
+  height: 100%;
 }
 
-.section {
-  min-width: 250px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow-y: hidden;
+.sectionTitle {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  text-align: center;
+}
+
+.sectionTitle h2 {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline 1px solid white;
 }
